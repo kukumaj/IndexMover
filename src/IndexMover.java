@@ -44,7 +44,10 @@ public class IndexMover {
                     int newPosition = startIndex-number;
                     if (newPosition < 0) {
                         newPosition = -newPosition;
-                        startIndex = someNumbers.length() - newPosition%someNumbers.length();
+                        int moduloshift = newPosition%someNumbers.length();
+                        moduloshift = moduloshift == 0?someNumbers.length():moduloshift;
+                        startIndex = someNumbers.length() - moduloshift;
+
                     }
                     else{
                         startIndex = newPosition;
