@@ -41,17 +41,23 @@ public class IndexMover {
 
                 }
                 case '-' -> {
-                    int newPosition = startIndex-number;
-                    if (newPosition < 0) {
-                        newPosition = -newPosition;
-                        int moduloshift = newPosition%someNumbers.length();
-                        moduloshift = moduloshift == 0?someNumbers.length():moduloshift;
-                        startIndex = someNumbers.length() - moduloshift;
+//                    int newPosition = startIndex-number;
+//                    if (newPosition < 0) {
+//                        newPosition = -newPosition;
+//                        int moduloshift = newPosition%someNumbers.length();
+//                        moduloshift = moduloshift == 0?someNumbers.length():moduloshift;
+//                        startIndex = someNumbers.length() - moduloshift;
 
-                    }
-                    else{
-                        startIndex = newPosition;
-                    }
+                        int newPosition = startIndex - number;
+                        int moduloshift = newPosition % someNumbers.length();
+                        startIndex = (someNumbers.length() + moduloshift) % someNumbers.length();
+
+
+
+//                    }
+//                    else{
+//                        startIndex = newPosition;
+//                    }
 
 //numbers.lengt -(number-number%numberlenght-1)
                     System.out.println(someNumbers);
